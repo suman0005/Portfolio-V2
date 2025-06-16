@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 7 App Mockup - Suman Shrestha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #818cf8;
+            --accent-color: #f472b6;
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --card-bg: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.05);
+            --gradient: linear-gradient(135deg, #6366f1, #f472b6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.3rem 0;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mockup-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .project-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .project-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .project-subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .mockup-showcase {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (min-width: 768px) {
+            .mockup-showcase {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .mockup-image {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .mockup-image:hover {
+            transform: translateY(-10px);
+        }
+
+        .mockup-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .mockup-details h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .mockup-details p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .feature-list {
+            list-style-type: none;
+            margin-bottom: 2rem;
+        }
+
+        .feature-list li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .feature-list li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -0.2rem;
+        }
+
+        .project-description {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .project-description h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .project-description p {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .additional-mockups {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .additional-mockup {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .additional-mockup:hover {
+            transform: translateY(-10px);
+        }
+
+        .additional-mockup img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        footer {
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+        }
+
+        /* Add back button styling - non-sticky */
+        .back-nav {
+            position: relative;
+            margin: 1.5rem 0 0 2rem;
+            z-index: 90;
+        }
+        
+        .back-nav-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 30px;
+            font-weight: 500;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: fit-content;
+        }
+        
+        .back-nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .back-arrow {
+            font-size: 1.2rem;
+        }
+        
+        /* Remove the navbar padding adjustment since button is now below */
+        .navbar {
+            padding-left: 2rem;
+        }
+        
+        /* Adjust mockup container spacing */
+        .mockup-container {
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .back-nav {
+                margin: 1rem 0 0 1rem;
+            }
+            
+            .back-nav-button {
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Suman Shrestha</a>
+        <div class="nav-links">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about">About Me</a>
+            <a href="index.html#frontend">Frontend Projects</a>
+            <a href="index.html#uiux">UI/UX Projects</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Back button positioned below navbar -->
+    <div class="back-nav">
+        <a href="../index.html#uiux" class="back-nav-button">
+            <span class="back-arrow">←</span> Back
+        </a>
+    </div>
+
+    <div class="mockup-container">
+        <div class="project-header">
+            <h1 class="project-title">Finance App Redesign</h1>
+            <p class="project-subtitle">A modern finance application redesigned with improved user flow and accessibility features</p>
+        </div>
+
+        <div class="mockup-showcase">
+            <img src="./Phone-7-App-Screen-Mockup-PSD copy.jpg" alt="iPhone 7 Finance App Mockup" class="mockup-image">
+            <div class="mockup-details">
+                <h3>Project Overview</h3>
+                <p>This finance app redesign focuses on creating a more intuitive and accessible experience for users managing their personal finances. The new design emphasizes clarity, simplicity, and visual hierarchy.</p>
+                
+                <ul class="feature-list">
+                    <li>Simplified dashboard with key financial metrics</li>
+                    <li>Improved transaction history with categorization</li>
+                    <li>Enhanced budget tracking and visualization</li>
+                    <li>Accessible color scheme with high contrast</li>
+                    <li>Streamlined payment process</li>
+                </ul>
+                
+                <a href="../index.html#uiux" class="back-button">Back to Projects</a>
+            </div>
+        </div>
+
+        <div class="project-description">
+            <h3>Design Process</h3>
+            <p>The redesign process began with extensive user research to identify pain points in the existing application. Through user interviews and usability testing, I discovered that users struggled with transaction categorization and budget visualization.</p>
+            <p>After creating wireframes and user flows, I developed high-fidelity mockups that addressed these issues with a cleaner interface, more intuitive navigation, and improved data visualization. The final design was validated through additional user testing.</p>
+        </div>
+
+        <!-- <div class="additional-mockups">
+            <div class="additional-mockup">
+                <img src="./finance-mockup-1.jpg" alt="Dashboard Screen">
+            </div>
+            <div class="additional-mockup">
+                <img src="./finance-mockup-2.jpg" alt="Transactions Screen">
+            </div>
+            <div class="additional-mockup">
+                <img src="./finance-mockup-3.jpg" alt="Budget Screen">
+            </div>
+        </div> -->
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Suman Shrestha. All rights reserved.</p>
+    </footer>
+</body>
+</html>
